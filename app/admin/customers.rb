@@ -21,6 +21,7 @@ ActiveAdmin.register Customer do
   remove_filter :image_attachment, :image_blob
   # filter :has_one_attached 
 
+  # Columns to render in the dashboard
   index do
     selectable_column
     id_column
@@ -33,6 +34,7 @@ ActiveAdmin.register Customer do
     actions
   end
 
+  # Form to create/edit a new customer
   form do |f|
     f.inputs 'Customer Details' do
       f.input :full_name
@@ -44,12 +46,15 @@ ActiveAdmin.register Customer do
     f.actions
   end
 
+  # Details of the customers created
   show do
     attributes_table do
       row :full_name
       row :phone_number
       row :email_address
       row :notes
+      row :created_at
+      row :updated_at
       row :image do |customer|
         if customer.image.attached?
           image_tag url_for(customer.image)
