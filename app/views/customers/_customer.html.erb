@@ -2,14 +2,14 @@
 <div class="customer-card">
   <%= image_tag customer.image.attached? ? url_for(customer.image) : 'default_image_path.jpg', class: 'w-full' %>
   <div class="px-6 py-4">
-    <div class="font-bold text-xl mb-8"><%= customer.full_name %></div>
-    <p class="text-gray-700 text-base">
+    <div class="font-bold text-xl mb-6"><%= customer.full_name %></div>
+    <p class="text-gray-700 text-base pb-2">
       Phone: <%= customer.phone_number %>
     </p>
-    <p class="text-gray-700 text-base">
+    <p class="text-gray-700 text-base pb-2">
       Email: <%= customer.email_address.present? ? customer.email_address : 'N/A' %>
     </p>
-    <p class="text-gray-700 text-base">
+    <p class="text-gray-700 text-base pb-2">
       Notes: <%= customer.notes %>
     </p>
   </div>
