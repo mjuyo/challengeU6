@@ -1,0 +1,10 @@
+<div class="flex flex-col items-start">
+    <h1 class="text-3xl font-bold mb-6">Alphabetized Customers</h1>
+    <div class="mb-4">
+    <%= link_to 'All Customers', root_path, class: 'text-blue-500 hover:underline' %> |
+    <%= link_to 'Customers with Missing Emails', customers_missing_email_path, class: 'text-blue-500 hover:underline' %>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <%= render partial: 'customer', collection: @customers %>
+    </div>
+</div>

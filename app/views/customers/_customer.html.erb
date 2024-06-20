@@ -1,8 +1,8 @@
 <!-- Partial for customer -->
-<div class="max-w-sm rounded overflow-hidden shadow-lg">
+<div class="customer-card">
   <%= image_tag customer.image.attached? ? url_for(customer.image) : 'default_image_path.jpg', class: 'w-full' %>
   <div class="px-6 py-4">
-    <div class="font-bold text-xl mb-2"><%= customer.full_name %></div>
+    <div class="font-bold text-xl mb-8"><%= customer.full_name %></div>
     <p class="text-gray-700 text-base">
       Phone: <%= customer.phone_number %>
     </p>
